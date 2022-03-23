@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
-    <link href="nintendo.css" rel="stylesheet" />
-    <title>Find the invisible Mario</title>
+    <link href="asoul.css" rel="stylesheet" />
+    <title>寻找枝江木头</title>
 </head>
 
 <body onload="toggleModal()">
@@ -18,24 +18,24 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Find the invisible Mario!</h5>
+                    <h5 class="modal-title">找到向晚大魔王!</h5>
                 </div>
                 <div class="modal-body">
-                    <p>Yahoo! Mario has escaped the insane asylum and needs finding.<br />To find him, listen for his call for help! The faster he Yahoo!'s, the closer you are to him..</p>
+                    <p>枝江木头又惹然比生气了！晚比偷偷躲进一片大雾里，你要替嘉然找回晚晚！<br />用心听晚晚的声音，声音越快，离你越近！</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="startGame()">I'm
-                        ready!</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="startGame()">
+                        来吧！</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="mario" onclick="foundMario(this)"></div>
+    <div id="AvAvA" onclick="foundAvA(this)"></div>
 
     <script>
-        var audio = new Audio("yahoo4.mp3");
-        var yahooLoop = null;
+        var audio = new Audio("hengheng.mp3");
+        var HenghengLoop = null;
 
         function toggleModal() {
             var myModal = new bootstrap.Modal(document.getElementById('gameOptions'));
@@ -43,25 +43,25 @@
         }
 
         function startGame() {
-            var mario = document.getElementById('mario');
-            mario.style.position = "absolute";
-            mario.style.left = Math.floor(Math.random() * window.innerWidth - 50) + 'px';
-            mario.style.top = Math.floor(Math.random() * window.innerHeight - 100) + 'px';
+            var AvAvA = document.getElementById('AvAvA');
+            AvAvA.style.position = "absolute";
+            AvAvA.style.left = Math.floor(Math.random() * window.innerWidth - 50) + 'px';
+            AvAvA.style.top = Math.floor(Math.random() * window.innerHeight - 100) + 'px';
 
-            yahooLoop = setInterval(function() {
+            HenghengLoop = setInterval(function() {
                 audio.play();
             }, 5)
         }
 
-        function foundMario(element) {
-            clearInterval(yahooLoop);
+        function foundAvA(element) {
+            clearInterval(HenghengLoop);
             element.style.opacity = "1.0";
 
             var thx = new Audio("thx.mp3");
             thx.play();
 
             setTimeout(function() {
-                alert("Congratulations, you found mario!");
+                alert("你找到了晚晚！");
             }, 500)
         }
 
@@ -71,8 +71,8 @@
         }
 
         document.addEventListener('mousemove', (event) => {
-            var mario = document.getElementById('mario').getBoundingClientRect();
-            var distance = calculateDistance(mario, event.clientX, event.clientY);
+            var AvAvA = document.getElementById('AvAvA').getBoundingClientRect();
+            var distance = calculateDistance(AvAvA, event.clientX, event.clientY);
 
             // kms
             if (distance < 100) audio.playbackRate = 10;
