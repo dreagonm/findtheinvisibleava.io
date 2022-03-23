@@ -1,5 +1,4 @@
 # findtheinvisiblemar.io
-Find the invisible Mario, a game inspired by findtheinvisiblecow.com
+Find the invisible AVA, a game inspired by findtheinvisiblecow.com
 
-# TODO
-- [ ] Remake in React
+Fork from https://github.com/emirpeskovic/findtheinvisiblemar.io
